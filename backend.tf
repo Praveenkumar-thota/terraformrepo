@@ -1,0 +1,7 @@
+terraform {
+ backend "gcs" {
+   bucket  = "terraform-gcs-tfstate"
+   prefix  = "terraform/state"
+   credentials = "./creds/serviceaccount.json"
+ }
+}
