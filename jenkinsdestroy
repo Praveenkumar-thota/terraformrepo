@@ -20,7 +20,11 @@ pipeline {
       steps {
         container('terraform') {
           sh 'terraform init'
-          sh 'terraform plan -out myplan'
+          sh 'echo "You will destory the following if you confirm"'
+          sh 'terraform state list'
+          sh 'echo "graph"'
+          sh 'terraform graph'
+          sh 'terraform show'
         }
       }      
     }
