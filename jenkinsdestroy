@@ -16,6 +16,14 @@ pipeline {
       }
     }
 
+    stage('TF init') {
+      steps {
+        container('terraform') {
+          sh 'terraform init'
+        }
+      }      
+    }
+
     stage('TF destroy') {
       steps {
         container('terraform') {
