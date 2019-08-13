@@ -46,7 +46,14 @@ pipeline {
     }
 
     
-
+      stage('Confirmation')  {
+        steps {
+         contanier('terraform')  {
+           sh 'echo "Resources have been destroyed"'
+           sh 'terrraform show'
+          }
+        }
+      }
    
   } 
 
