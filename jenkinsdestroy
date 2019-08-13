@@ -20,9 +20,9 @@ pipeline {
       steps {
         container('terraform') {
           sh 'terraform init'
-          sh 'echo "Followig Infrastructure will be  destory once you confirm"'
+          sh 'echo "Followig Infrastructure will be destroyed once you confirm"'
           sh 'terraform state list'
-          sh 'Complete Terraform state is below'
+          sh 'echo "complete Terraform state is below"'
           sh 'terraform show'
         }
       }      
