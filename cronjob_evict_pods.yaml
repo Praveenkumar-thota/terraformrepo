@@ -1,0 +1,16 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: google/cloud-sdk
+            command: ["/bin/sh","-c"]
+            args: ["echo INFO Evicting below pods; kubectl get pods -n default --field-selector 'status.phase==Failed'  -o json | kubectl delete -f - && date"]
+          restartPolicy: OnFailure
