@@ -19,21 +19,19 @@ tags = ["http-server","https"]
 } 
 
 #To create a firewall rule, must change protocal, ports, targettag, name 
-/* 
 module "firewall" {
-  source        = "./firewall"
-
+  source        = "./modules/firewall"
   protocol      = "tcp"
   ports         = ["22"]
   source_ranges = ["0.0.0.0/0"]
-  targettag = "ssh22allow"
-  name          = "allow-ssh"
+  target_tags   = ["http-server", "https-server"]
+  name          = "firewall-demo"
   #network       = "${data.google_compute_network.test-vpc.name}"
-  network       = "default"
-  
-}
-*/
+  network  = "default"
+  project  = "my-new-project-239511"
+  priority = "1000"
 
+}
 
 
 #TO CREATE A PROJECT 
