@@ -23,19 +23,20 @@ resource "google_compute_instance" "compute_instance" {
       type = "${var.disk_type}"
     }
   }
+  
+  metadata_startup_script = "${file("./startup_scripts/startup_apache.sh")}"
 
   network_interface {
     
     subnetwork         = "${var.subnetwork}"
     subnetwork_project = "${var.project}"  
 
-    /*access_config {
+   access_config {
       # Include this section to give the VM an external ip address
-    } */
+    } 
 
     
   }
-  // Apply the firewall rule to allow external IPs to access this instance, change to variable
   tags = "${var.tags}"
 }
 

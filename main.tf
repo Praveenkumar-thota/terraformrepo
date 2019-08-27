@@ -13,7 +13,7 @@ disk_image = "debian-cloud/debian-9"
 disk_size = "10"
 disk_type = "pd-standard"
 subnetwork = "default"
-tags = ["http-server","https"]
+tags = ["http-server"]
 
 
 } 
