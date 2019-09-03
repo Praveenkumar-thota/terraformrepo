@@ -2,6 +2,7 @@ resource "google_container_cluster" "primary" {
   name               = "marcellus-wallace"
   location           = "us-central1-a"
   initial_node_count = 3
+  project = "my-new-project-239511" 
 
   master_auth {
     username = ""
