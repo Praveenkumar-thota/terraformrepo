@@ -37,7 +37,7 @@ pipeline {
       steps {
         container('terraform') {
           sh 'terraform apply -input=false myplan '
-          sh 'sleep 300'
+          
         }
       }
     }
