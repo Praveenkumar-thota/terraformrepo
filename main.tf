@@ -43,3 +43,7 @@ project_name = "myprojectname"
 }
 */
 
+module "gkeinstances" {
+  source = "./modules/gkecluster"
+  
+} 
