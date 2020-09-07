@@ -17,7 +17,7 @@ variable "disk_type" {
 variable "disk_size" {}
 variable "disk_image" {}
 variable "tags" {
-type = "list"
+type = list(string)
 }
 
 
