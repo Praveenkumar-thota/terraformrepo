@@ -1,4 +1,4 @@
-#Launch a compute engine instance
+# Launch a compute engine instance
 
 #Data sources
 /*data "google_compute_zones" "available" {
