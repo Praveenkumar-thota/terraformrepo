@@ -1,4 +1,4 @@
-#variables for instance creation
+# variables for instance creation
 
 variable "zone" {
   description = "machine type."
